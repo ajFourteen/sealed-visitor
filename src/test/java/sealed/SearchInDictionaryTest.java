@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static sealed.SearchInDictionary.result;
 
 class SearchInDictionaryTest {
 
@@ -39,9 +40,8 @@ class SearchInDictionaryTest {
                 )
             )
         );
-    var sut = new SearchInDictionary(dictionary);
 
-    var result = sut.result("Invariante");
+    var result = result(dictionary, "Invariante");
 
     assertTrue(result.isPresent());
     assertEquals("Bedingung, die immer wahr bleiben muss.", result.get());
